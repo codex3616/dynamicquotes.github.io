@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Mulish&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400&family=Stylish&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  /* font-family: "Mulish", sans-serif; */
+}
+
+body .bg {
+  background-color: #14213d !important;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.bigBox {
+  width: 750px;
+  max-width: 90%;
+  height: 500px;
+  max-height: 90%;
+  margin: 4rem auto;
+  border-radius: 0.3rem;
+  /* background-color: ; */
+  overflow: auto;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.box {
+  width: 480px;
+  max-width: 90%;
+  height: 340px;
+  max-height: 90%;
+  margin: 0rem auto;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  position: relative;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.logo {
+  margin: 1.5rem auto;
+  letter-spacing: 0.2rem;
+  font-family: "Stylish", sans-serif;
+}
+
+.btn {
+  width: 100% !important;
+  background-color: blue;
+  color: #fff;
+  position: absolute;
+  bottom: 0px;
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.quotes {
+  margin: 0rem auto !important;
+  font-family: "Baloo Bhai 2", cursive !important;
+  color: #949292;
+  /* margin-top: 2rem; */
+  height: 200px;
+  max-height: 90%;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+.icon {
+  /* padding: 2rem; */
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+#text {
+  font-size: 1.3rem;
+}
+.quotes p {
+  /* display: inline-block; */
+  /* margin-top: ; */
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+}

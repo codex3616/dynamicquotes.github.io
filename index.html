@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="bigBox bg-primary">
+        <div class="logo">
+          <h2 class="display-6 text-center">Quotes by Famous People</h2>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="currentColor"
+              class="bi bi-quote"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+              />
+            </svg>
+          </div>
+          <div class="quotes">
+            <div id="text"></div>
+            <div class="author">
+              <p id="author"></p>
+            </div>
+          </div>
+          <div class="button">
+            <button id="newQ" class="btn">New Quotes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const api = "https://type.fit/api/quotes";
+      const quotes = document.getElementById("text");
+      const author = document.getElementById("author");
+      const newQ = document.getElementById("newQ");
+
+      let apiData = "";
+      const getNewQuotes = () => {
+        let randomNum = Math.floor(Math.random() * 1643);
+        quotes.innerText = apiData[randomNum].text;
+        apiData[randomNum].author === null
+          ? (author.innerText = "undefined")
+          : (author.innerText = "By " + apiData[randomNum].author);
+      };
+      const getData = async () => {
+        try {
+          const res = await fetch(api);
+          apiData = await res.json();
+          getNewQuotes();
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      getData();
+
+      newQ.addEventListener("click", getNewQuotes);
+
+      // console.log(apiRes);
+    </script>
+  </body>
+</html>
